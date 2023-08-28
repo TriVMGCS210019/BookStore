@@ -11,7 +11,9 @@ namespace BookStore.Models
         [Required]
 
         public int Quantity { get; set; }
-      
+        [Required]
+
+        public int Total { get; set; }
         [Required]
 
         public virtual Book Book { get; set; }
