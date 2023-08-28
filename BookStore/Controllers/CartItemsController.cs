@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Data;
 using BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStore.Controllers
 {
@@ -46,6 +47,7 @@ namespace BookStore.Controllers
         }
 
         // GET: CartItems/Create
+        [Authorize(Roles = "Sales Manager")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +58,7 @@ namespace BookStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Sales Manager")]
         public async Task<IActionResult> Create([Bind("Id,Title,Quantity,Total")] CartItem cartItem)
         {
             if (ModelState.IsValid)
