@@ -12,5 +12,7 @@ namespace BookStore.Data
         }
         public DbSet<BookStore.Models.ApplicationRole> ApplicationRole { get; set; } = default!;
         public DbSet<BookStore.Models.Book> Book { get; set; } = default!;
+        public DbSet<BookStore.Models.CartItem> CartItem { get; set; } = default!;
+        public DbSet<BookStore.Models.Category> Category { get; set; } = default!;
     }
 }
