@@ -122,6 +122,7 @@ namespace BookStore.Controllers
         }
 
         // GET: CartItems/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.CartItem == null)

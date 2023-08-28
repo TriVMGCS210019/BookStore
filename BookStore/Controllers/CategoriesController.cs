@@ -123,6 +123,8 @@ namespace BookStore.Controllers
         }
 
         // GET: Categories/Delete/5
+        [Authorize(Roles = "Sales Manager")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Category == null)
@@ -143,6 +145,8 @@ namespace BookStore.Controllers
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Sales Manager")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Category == null)
